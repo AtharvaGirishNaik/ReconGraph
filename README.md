@@ -245,6 +245,7 @@ ReconGraph is built around four primary components:
 | Agent Framework      | LangGraph                        |
 | LLM Framework        | LangChain Core                   |
 | Large Language Model | Google Gemini 1.5 Flash          |
+| User Interface       | Streamlit                        |
 | Dataset              | Synthetic financial transactions |
 | Records              | 60 dynamically generated records |
 | Query Strategy       | Schema-aware Text-to-SQL         |
@@ -383,6 +384,7 @@ The result was a substantial improvement in the agent's ability to correct faile
 ```text
 recongraph-buildathon/
 │
+├── app.py
 ├── main.py
 ├── mock_data.py
 ├── requirements.txt
@@ -395,6 +397,7 @@ recongraph-buildathon/
 
 | File                 | Purpose                                        |
 | -------------------- | ---------------------------------------------- |
+| `app.py`             | Streamlit Operations Dashboard UI              |
 | `main.py`            | Main LangGraph reconciliation controller       |
 | `mock_data.py`       | Generates synthetic financial transaction data |
 | `requirements.txt`   | Python project dependencies                    |
@@ -466,10 +469,10 @@ The generated database contains 60 synthetic transaction records with intentiona
 
 ## 5. Run ReconGraph
 
-Start the reconciliation controller:
+Launch the interactive Operations Dashboard:
 
 ```bash
-python main.py
+streamlit run app.py
 ```
 
 The system will:
